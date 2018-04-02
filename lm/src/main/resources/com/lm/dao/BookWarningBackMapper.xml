@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lm.dao.BookWarningBackMapper">
+    <resultMap id="result-bookWarningBackMapper" type="BookWarningBack">
+        <id property="id" column="id"/>
+        <result property="isbn" column="isbn"/>
+        <result property="bookname" column="bookname"/>
+        <result property="account" column="account"/>
+        <result property="cardtype" column="cardtype"/>
+        <result property="card_id" column="card_id"/>
+        <result property="username" column="username"/>
+        <result property="email" column="email"/>
+        <result property="phone" column="phone"/>
+        <result property="usertype" column="usertype"/>
+        <result property="borrow_date" column="borrow_date"/>
+        <result property="expire_date" column="expire_date"/>
+    </resultMap>
+
+    <select id="finddate" resultMap="result-bookWarningBackMapper">
+    select b.isbn,b.name bookname,bu.account,bu.cardtype,bu.card_id,bu.name username,
+    bu.email,bu.phone,bu.usertype,br.borrow_date,br.expire_date
+    from book b,book_user bu,borrow br where br.book_id=b.id and br.user_id=bu.id
+    </select>
+
+</mapper>

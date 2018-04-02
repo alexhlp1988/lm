@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+         id="WebApp_ID" version="3.1">
+  <display-name>lm</display-name>
+  <!-- 配置过滤器: 建议在 servlet 之前 -->
+  <filter>
+    <filter-name>CharFilter</filter-name>
+    <filter-class>com.lm.filter.CharFilter</filter-class>
+    <!-- 设置初始化参数: 默认的字符编码 -->
+    <init-param>
+      <param-name>encoding</param-name>
+      <param-value>utf-8</param-value>
+    </init-param>
+  </filter>
+
+  <filter-mapping>
+    <filter-name>CharFilter</filter-name>
+    <!-- 来自客户端的所有请求都需经过此过滤器-->
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
+  <servlet>
+    <servlet-name>RandomCodeServlet</servlet-name>
+    <servlet-class>com.lm.servlet.RandomCodeServlet</servlet-class>
+  </servlet>
+    <servlet>
+        <servlet-name>LoginServlet</servlet-name>
+        <servlet-class>com.lm.servlet.LoginServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>IndexServlet</servlet-name>
+        <servlet-class>com.lm.servlet.IndexServlet</servlet-class>
+    </servlet>
+  <servlet>
+    <servlet-name>ManagerServlet</servlet-name>
+    <servlet-class>com.lm.servlet.ManagerServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ManagerServlet</servlet-name>
+    <url-pattern>/ManagerServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+      <servlet-name>IndexServlet</servlet-name>
+      <url-pattern>/IndexServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>LoginServlet</servlet-name>
+        <url-pattern>/LoginServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+    <servlet-name>RandomCodeServlet</servlet-name>
+    <url-pattern>/randomCodeServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>BookServlet</servlet-name>
+    <servlet-class>com.lm.servlet.BookServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>BookServlet</servlet-name>
+    <url-pattern>/BookServlet</url-pattern>
+  </servlet-mapping>
+
+
+  <servlet>
+    <servlet-name>BookTypeServlet</servlet-name>
+    <servlet-class>com.lm.servlet.BookTypeServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>BookTypeServlet</servlet-name>
+    <url-pattern>/BookTypeServlet</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>BookUserTypeServlet</servlet-name>
+    <servlet-class>com.lm.servlet.BookUserTypeServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>BookUserTypeServlet</servlet-name>
+    <url-pattern>/BookUserTypeServlet</url-pattern>
+  </servlet-mapping>
+
+    <servlet>
+        <servlet-name>BookUserServlet</servlet-name>
+        <servlet-class>com.lm.servlet.BookUserServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>BookUserServlet</servlet-name>
+        <url-pattern>/BookUserServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>LoginBookUserServlet</servlet-name>
+        <servlet-class>com.lm.servlet.LoginBookUserServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LoginBookUserServlet</servlet-name>
+        <url-pattern>/LoginBookUserServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>IndexBookUserServlet</servlet-name>
+        <servlet-class>com.lm.servlet.IndexBookUserServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>IndexBookUserServlet</servlet-name>
+        <url-pattern>/IndexBookUserServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>BookBorrowServlet</servlet-name>
+        <servlet-class>com.lm.servlet.BookBorrowServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>BookBorrowServlet</servlet-name>
+        <url-pattern>/BookBorrowServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>BorrowServlet</servlet-name>
+        <servlet-class>com.lm.servlet.BorrowServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>BorrowServlet</servlet-name>
+        <url-pattern>/BorrowServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>BookBorrowBookUserServlet</servlet-name>
+        <servlet-class>com.lm.servlet.BookBorrowBookUserServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>BookBorrowBookUserServlet</servlet-name>
+        <url-pattern>/BookBorrowBookUserServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ShowBorrowedBookServlet</servlet-name>
+        <servlet-class>com.lm.servlet.ShowBorrowedBookServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ShowBorrowedBookServlet</servlet-name>
+        <url-pattern>/ShowBorrowedBookServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>BookWarningBackServlet</servlet-name>
+        <servlet-class>com.lm.servlet.BookWarningBackServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>BookWarningBackServlet</servlet-name>
+        <url-pattern>/BookWarningBackServlet</url-pattern>
+    </servlet-mapping>
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+</web-app>

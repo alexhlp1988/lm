@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lm.dao.BookBorrowBookUserMapper">
+    <!--
+     <resultMap id="result-bookborrowbookuser" type="BookBorrowBookUser">
+         <id property="id" column="id"/>
+         <result property="book_id" column="book_id"/>
+         <result property="user_id" column="user_id"/>
+         <result property="is_back" column="is_back"/>
+         <result property="isbn" column="isbn"/>
+         <result property="library_card" column="library_card"/>
+     </resultMap>
+
+     <select id="updatebookborrowbookuser" resultMap="result-bookborrowbookuser">
+         UPDATE BORROW set IS_BACK=#{is_back} where id =
+         (SELECT id FROM BORROW WHERE BOOK_ID = (select id from book where ISBN = #{isbn})
+         and USER_ID = (select id from BOOK_USER where LIBRARY_CARD=#{library_card}))
+     </select>
+     -->
+</mapper>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lm.dao.BookMapper">
+
+    <!--<resultMap id="result-book" type="Book">-->
+        <!--<id property="id" column="id"/>-->
+        <!--<result property="isbn" column="isbn"/>-->
+        <!--<result property="name" column="name"/>-->
+        <!--<result property="author" column="author"/>-->
+        <!--<result property="publisher" column="publisher"/>-->
+        <!--<result property="price" column="price"/>-->
+        <!--<result property="sign_date" column="sign_date"/>-->
+        <!--<result property="manager" column="manager"/>-->
+        <!--<result property="amount" column="amount"/>-->
+        <!--<result property="book_type" column="book_type"/>-->
+
+    <!--</resultMap>-->
+
+</mapper>

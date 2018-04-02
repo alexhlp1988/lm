@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lm.dao.BookUserMapper">
+    <resultMap id="result-bookuser" type="BookUser">
+        <id property="id" column="id"/>
+        <result property="account" column="account"/>
+        <result property="password" column="password"/>
+        <result property="usertype" column="usertype"/>
+        <result property="name" column="name"/>
+        <result property="sex" column="sex"/>
+        <result property="library_card" column="library_card"/>
+        <result property="cardtype" column="cardtype"/>
+        <result property="card_id" column="card_id"/>
+        <result property="phone" column="phone"/>
+        <result property="email" column="email"/>
+        <result property="reg_date" column="reg_date"/>
+        <result property="manager" column="manager"/>
+        <result property="back_up" column="back_up"/>
+    </resultMap>
+    <select id="login" resultMap="result-bookuser">
+        select id,account,password,usertype,name,sex,library_card,cardtype,card_id,phone,email,reg_date,
+        manager,back_up from BOOK_USER
+        <where>
+            account = #{account}
+            and password = #{password}
+        </where>
+    </select>
+</mapper>
